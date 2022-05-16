@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ef04_TobbATobbKapcsolat", "ef04_TobbATobbKapcsolat\ef04_TobbATobbKapcsolat.csproj", "{FA399093-97BA-4AF0-8FB3-F4DA4F283499}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA399093-97BA-4AF0-8FB3-F4DA4F283499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA399093-97BA-4AF0-8FB3-F4DA4F283499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA399093-97BA-4AF0-8FB3-F4DA4F283499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA399093-97BA-4AF0-8FB3-F4DA4F283499}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57A55903-8886-46E3-8CFC-FCACB045941F}
+	EndGlobalSection
+EndGlobal

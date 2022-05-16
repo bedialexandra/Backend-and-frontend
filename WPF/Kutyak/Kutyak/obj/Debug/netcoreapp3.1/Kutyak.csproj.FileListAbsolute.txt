@@ -1,0 +1,17 @@
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.exe
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\KutyaFajtak.csv
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.csv
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\KutyaNevek.csv
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.deps.json
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.runtimeconfig.json
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.runtimeconfig.dev.json
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.dll
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\bin\Debug\netcoreapp3.1\Kutyak.pdb
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.csproj.AssemblyReference.cache
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.GeneratedMSBuildEditorConfig.editorconfig
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.AssemblyInfoInputs.cache
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.AssemblyInfo.cs
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.csproj.CoreCompileInputs.cache
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.dll
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.pdb
+Z:\2021-2022_tanev\Console\Kutyak\Kutyak\obj\Debug\netcoreapp3.1\Kutyak.genruntimeconfig.cache

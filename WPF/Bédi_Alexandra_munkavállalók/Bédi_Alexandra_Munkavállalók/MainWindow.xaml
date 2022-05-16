@@ -1,0 +1,136 @@
+﻿<Window x:Class="Bédi_Alexandra_Munkavállalók.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bédi_Alexandra_Munkavállalók"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="750" FontSize="14">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="190"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="3" >
+            <Label Margin="5" Content="Munkavállalók" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="24"/>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="Munkavállalók: " Margin="5" FontWeight="Bold"/>
+            <ListBox IsSynchronizedWithCurrentItem="True" FontSize="16" x:Name="lbox_munkavallalok" Margin="5" Height="190">
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ListBoxItem>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontWeight="Bold" Text="Név: "/>
+                                    <TextBlock Text="{Binding nev, Mode=TwoWay}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    
+                                    <TextBlock FontWeight="Bold" Text="Fizetési kategória: "/>
+                                    <TextBlock Text="{Binding fizetesiKategoria,Mode=TwoWay}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontWeight="Bold" Text="Éves szabadság: "/>
+                                    <TextBlock Text="{Binding evesSzabadsag,Mode=TwoWay}"/>
+                                </StackPanel>
+                            </StackPanel>
+                            
+                            
+                        </ListBoxItem>
+                        
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+            <Label Content="Új munkavállaló" Margin="5" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Név: "/>
+                <TextBox x:Name="tbox_nev" Margin="90,5,5,5" Width="200"/>
+                <TextBlock x:Name="tblock_nevError" Foreground="Red" Width="400" Margin="5" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Fizetési kategórai: "/>
+                <ComboBox ItemsSource="{Binding}" x:Name="cbox_fizetesiKategoria" Margin="8,5,5,5" Width="200"/>
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Éves szabadság: "/>
+                <TextBox x:Name="tbox_evesSzabadsag" Margin="20,5,5,5" Width="200"/>
+                <TextBlock x:Name="tblock_szabadsagError" Foreground="Red" Width="400" Margin="5" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+
+                <Button x:Name="btn_Mentes" Margin="132,5,5,5" Click="btn_Mentes_Click" Width="200" Height="30" Content="Mentés">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="IsEnabled" Value="True"/>
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ElementName=tbox_nev, Path=Text}" Value="0"/>
+                                        <Condition Binding="{Binding ElementName=cbox_fizetesiKategoria, Path=SelectIndex}" Value="0"/>
+                                        <Condition Binding="{Binding ElementName=tbox_evesSzabadsag, Path=Text}" Value="0"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                
+                </Button>
+            </StackPanel>
+            
+            
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5" Content="Éves szabadság: "/>
+                <TextBlock Margin="55,5,5,5" x:Name="tblock_nev" Width="40" Text="{Binding evesSzabadsag}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5" Content="Kivett szabadság: "/>
+                <TextBlock Margin="45,5,5,5" x:Name="tblock_kivettSzabadsag" Width="40"  Text="{Binding osszkivettSzabadsag}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5" Content="Maradék szabadság: "/>
+                <TextBlock Margin="25,5,5,5" x:Name="tblock_maradekSzabadsag" Width="40" Text="{Binding maradekSzabadsag}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5" Content="Szabadság igény: "/>
+                <TextBox Margin="1,5,5,5" x:Name="tbox_szabadsagIgeny" Width="40"/>
+                <Button x:Name="btn_szabadsagIgeny" Padding="5" Margin="20,5,5,5" Content="Igényel" Click="btn_szabadsagIgeny_Click" IsEnabled="{Binding ElementName=tbox_szabadsagIgeny,Path=Text.Length}"/>
+            </StackPanel>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Label Margin="5" Content="Szabadság lista: "/>
+            <ListBox x:Name="lbox_szabadsag" Margin="5,5,20,5"  Height="190" IsSynchronizedWithCurrentItem="True">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ListBoxItem>
+                            <StackPanel>
+                                <TextBlock Text="{Binding kivettszabi}"/>
+                            </StackPanel>
+
+
+                        </ListBoxItem>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+    </Grid>
+</Window>

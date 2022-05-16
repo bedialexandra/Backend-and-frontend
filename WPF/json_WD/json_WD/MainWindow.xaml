@@ -1,0 +1,31 @@
+﻿<Window x:Class="json_WD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:json_WD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" x:Name="SP_film">
+            <Image Source="{Binding image.medium}"/>
+            <TextBlock Text="{Binding name}" FontSize="24" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,5">
+                <TextBlock Text="{Binding season,StringFormat=Season: \{0\}}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding number,StringFormat=Number: \{0\}}"/>
+            </StackPanel>
+            <TextBlock Text="{Binding summary}" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <Button x:Name="BTN_prev" Content="&lt;-" VerticalAlignment="Center" Padding="5" Margin="5" Click="BTN_prev_Click"/>
+
+        <Button x:Name="BTN_next" Content="-&gt;" VerticalAlignment="Center" Padding="5" Margin="5" Click="BTN_next_Click"
+                Grid.Column="2"/>
+    </Grid>
+</Window>

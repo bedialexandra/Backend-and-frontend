@@ -1,0 +1,87 @@
+﻿<Window x:Class="ef04_TobbATobbKapcsolat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ef04_TobbATobbKapcsolat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- teszt eredmének -->
+        <StackPanel Margin="5">
+            <DataGrid x:Name="DG_eredmenyek" AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      Height="150">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tanuló" Binding="{Binding Tanulo.tanuloNev}"/>
+                    <DataGridTextColumn Header="Teszt" Binding="{Binding Teszt.tesztMegnevezes}"/>
+                    <DataGridTextColumn Header="Eredmény" Binding="{Binding eredmeny}"/>
+                    <DataGridTextColumn Header="Dátum" 
+                                        Binding="{Binding datum, StringFormat=\{0:yyyy.MM.dd\}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <GroupBox Header="Új teszt eredmény">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="Tanuló:" Width="120"/>
+                        <ComboBox x:Name="CBO_tanulok" Width="120" DisplayMemberPath="tanuloNev"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="Teszt:" Width="120"/>
+                        <ComboBox x:Name="CBO_teszt" Width="120" DisplayMemberPath="tesztMegnevezes"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="Eredmény:" Width="120"/>
+                        <TextBox x:Name="TB_eredmeny" Width="80"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Content="Dátum:" Width="120"/>
+                        <DatePicker x:Name="DP_datum" Width="120"/>
+                    </StackPanel>
+                    <Button x:Name="BTN_mentes" Content="Mentés"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Margin="125,5,5,5"
+                            Width="100"
+                            Click="BTN_mentes_Click"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        
+        <!-- jobb oldal / lekérdezések -->
+
+        <StackPanel Grid.Column="1">
+            <DataGrid x:Name="DG_lekerdezesTeszt" AutoGenerateColumns="True"
+                      IsReadOnly="True" Margin="5"
+                      Height="150"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Teszt:" Margin="5"/>
+                <ComboBox x:Name="CBO_teszt2" Width="120"
+                      HorizontalAlignment="Left"
+                      Margin="5"
+                      DisplayMemberPath="tesztMegnevezes"
+                      SelectionChanged="CBO_teszt2_SelectionChanged"/>
+            </StackPanel>
+
+            <DataGrid x:Name="DG_lekérdezesTanulok" AutoGenerateColumns="True"
+                      IsReadOnly="True" Margin="5"
+                      Height="150"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Tanuló:" Margin="5"/>
+                <ComboBox x:Name="CBO_tanulo2" Width="120"
+                      HorizontalAlignment="Left"
+                      Margin="5"
+                      DisplayMemberPath="tanuloNev"
+                      SelectionChanged="CBO_tanulo2_SelectionChanged"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>

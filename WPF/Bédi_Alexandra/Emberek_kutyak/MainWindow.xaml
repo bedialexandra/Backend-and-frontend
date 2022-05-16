@@ -1,0 +1,107 @@
+﻿<Window x:Class="Emberek_kutyak.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Emberek_kutyak"
+        mc:Ignorable="d"
+        Title="Emberek és kutyák" Height="525" Width="800" FontSize="18">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Label Content="Emberek: " FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Név: " Margin="5"/>
+                <TextBox Width="150" Margin="30,5,5,5" x:Name="tbox_nev"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Életkor: " Margin="5"/>
+                <TextBox Width="150" Margin="5" x:Name="tbox_eletkor"/>
+            </StackPanel>
+            <Button x:Name="btn_mentesEmber" IsEnabled="{Binding ElementName=tbox_nev,Path=Text.Length}" Content="Mentés" Margin="5" Click="btn_mentesEmber_Click"/>
+            <ListBox x:Name="lbox_ember" Margin="5" Height="150" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ListBoxItem>
+                            <StackPanel>
+                                <TextBlock Text="{Binding nev, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding eletkor,Mode=TwoWay}"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            
+            
+            </ListBox>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Név: " Margin="5"/>
+                <TextBlock Text="{Binding nev}" Margin="80,5,5,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Életkor: " Margin="5"/>
+                <Label Content="{Binding eletkor}" Margin="55,5,5,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Kutyák száma: " Margin="5"/>
+                <Label Content="{Binding kutyakszama}"/>
+            </StackPanel>
+            <CheckBox Content="Nagyfülü" IsChecked="{Binding nagyfulu}"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Label Content="Kutyak: " FontWeight="Bold"/>
+            <StackPanel x:Name="sp_kutya">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Kutyanév: " Margin="5"/>
+                    <TextBox Width="150" Text="{Binding kutyaNev}" Margin="5,5,5,5" x:Name="tbox_kutyanev"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Fajta: " Margin="5"/>
+                    <TextBox Width="150" Margin="40,5,5,5" Text="{Binding fajta}" x:Name="tbox_fajta" />
+                </StackPanel>
+            </StackPanel>
+            
+            <Button x:Name="btn_mentesKutya" Content="Mentés" Margin="5" Click="btn_mentesKutya_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="IsEnabled" Value="True"/>
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=tbox_kutyanev, Path=Text}" Value=""/>
+                                    
+                                    <Condition Binding="{Binding ElementName=tbox_fajta, Path=Text}" Value=""/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+
+            </Button>
+            <ListBox x:Name="lbox_kutya" Margin="5" Height="150" ItemsSource="{Binding kutyak}" IsSynchronizedWithCurrentItem="True">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ListBoxItem>
+                            <StackPanel>
+                                <TextBlock Text="{Binding kutyaNev}"/>
+                                <TextBlock Text="{Binding fajta}"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+
+            </ListBox>
+            
+            <CheckBox Content="Hűséges" IsChecked="{Binding Path=kutyak/huseges}"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

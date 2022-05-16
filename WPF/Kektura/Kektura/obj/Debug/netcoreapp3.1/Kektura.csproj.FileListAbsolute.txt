@@ -1,0 +1,15 @@
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\Kektura.exe
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\kektura.csv
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\Kektura.deps.json
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\Kektura.runtimeconfig.json
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\Kektura.runtimeconfig.dev.json
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\Kektura.dll
+Z:\2021-2022_tanev\Console\Kektura\Kektura\bin\Debug\netcoreapp3.1\Kektura.pdb
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.csproj.AssemblyReference.cache
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.GeneratedMSBuildEditorConfig.editorconfig
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.AssemblyInfoInputs.cache
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.AssemblyInfo.cs
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.csproj.CoreCompileInputs.cache
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.dll
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.pdb
+Z:\2021-2022_tanev\Console\Kektura\Kektura\obj\Debug\netcoreapp3.1\Kektura.genruntimeconfig.cache

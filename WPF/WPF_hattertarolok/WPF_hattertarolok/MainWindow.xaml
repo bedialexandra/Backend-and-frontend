@@ -1,0 +1,121 @@
+﻿<Window x:Class="WPF_hattertarolok.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_hattertarolok"
+        mc:Ignorable="d"
+        Title="Háttértároló" Height="500" Width="800" FontSize="14">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Label Content="Háttértároló" Margin="5" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Méret: " Margin="5"/>
+                <TextBox x:Name="tbox_ujHatterTaroloMeret" Margin="5" Width="60"/>
+                <Label Content="Kbyte" Margin="5"/>
+            </StackPanel>
+            <Button IsEnabled="{Binding ElementName=tbox_ujHatterTaroloMeret,Path=Text.Length}" x:Name="btn_ujHatterTarolo" Content="Új" Margin="5" Padding="5" Click="btn_ujHatterTarolo_Click"/>
+            <ListBox IsSynchronizedWithCurrentItem="True" x:Name="lbox_hatterTarolo" Margin="5" Height="100" ItemsSource="{Binding}" DisplayMemberPath="maxkapacitas"/>
+            <Label FontWeight="Bold" Content="Adatok: " Margin="5,15,5,5"/>
+            <TextBlock Text="{Binding maxkapacitas, StringFormat=Maxkapacitás: {0} Kbyte}" Margin="5"/>
+            <TextBlock Text="{Binding foglaltKapacitas, StringFormat=Foglaltkapacitás: : {0} Kbyte}" Margin="5"/>
+            <TextBlock Text="{Binding szabadKapacitas, StringFormat=Szabadkapacitás: : {0} Kbyte}" Margin="5"/>
+
+            <Separator/>
+            <CheckBox Content="Írásvédett" Margin="5" 
+                      VerticalContentAlignment="Center"
+                      Visibility="{Binding Path=lezarvaFloppyMutat,Converter={StaticResource BooleanToVisibilityConverter},FallbackValue=hidden}"
+                      IsChecked="{Binding irasvedett}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <GroupBox Margin="5" Padding="5" x:Name="gbox_ujfajl">
+                <GroupBox.Header>
+                    <TextBlock Text="Új fájl hozzáadása" FontWeight="Bold"/>
+                    
+                </GroupBox.Header>
+                <StackPanel>
+                    <Label Content="Fájlnév: " Margin="5"/>
+                    <TextBox x:Name="tbox_fajlnev" Margin="5,0,5,0" Text="{Binding fajlnev}"/>
+
+                    <Label Content="Méret: " Margin="5"/>
+                    <TextBox x:Name="tbox_meret" Margin="5,0,5,0" Text="{Binding meret}"/>
+
+                    <CheckBox Content="Csak olvasható" Margin="5" IsChecked="{Binding csakolvashato}"/>
+                    <CheckBox Content="Rendszer" Margin="5" IsChecked="{Binding rendszer}"/>
+                    <CheckBox Content="Rejtett" Margin="5" IsChecked="{Binding rejtett}"/>
+
+                    <Button x:Name="btn_ujfajl" Content="Új fájl" Margin="5,15,5,5" Padding="5" Click="btn_ujfajl_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="True"/>
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding ElementName=tbox_fajlnev,Path=Text.Length}" Value="0"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </MultiDataTrigger>
+                                    
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        
+                    </Button>
+                </StackPanel>
+            </GroupBox>
+            <Separator Margin="5"/>
+            <Button x:Name="btn_ujfloppy" Content="Új floppy" Margin="5" Padding="5" Click="btn_ujfloppy_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <Label Content="Fájlok" FontWeight="Bold"/>
+            <ListBox IsSynchronizedWithCurrentItem="True" x:Name="lbox_fajlok" Margin="5" Height="200" ItemsSource="{Binding fajlok}" DisplayMemberPath="fajlnev"/>
+            <Button x:Name="BTN_torol" Content="Törlés" Margin="5" Padding="5" Click="BTN_torol_Click" IsEnabled="{Binding ElementName=lbox_fajlok,Path=SelectedItems.Count}"/>
+            <Button x:Name="btn_formazas" Content="Formázás" Margin="5" Padding="5" Click="btn_formazas_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3">
+            <GroupBox Margin="5" Padding="5" >
+                <GroupBox.Header>
+                    
+                        <TextBlock Text="Fájl módosítás"   FontWeight="Bold"/>
+                   
+                    
+                    
+                </GroupBox.Header>
+                <StackPanel>
+                    <TextBlock Margin="5" 
+                           Text="{Binding Path=fajlok/fajlnev, StringFormat=Fájlnév: {0}}"/>
+                    <TextBlock Margin="5" 
+                           Text="{Binding Path=fajlok/meret, StringFormat=Méret: {0} Kbyte}"/>
+                    <CheckBox Content="Csak olvasható" IsChecked="{Binding Path=fajlok/csakolvashato}" VerticalContentAlignment="Center" Margin="5"/>
+                    <CheckBox Content="Rendszer" IsChecked="{Binding Path=fajlok/rendszer}" VerticalContentAlignment="Center" Margin="5"/>
+                    <CheckBox Content="Rejtett fájl" IsChecked="{Binding Path=fajlok/rejtettfajl}" VerticalContentAlignment="Center" Margin="5"/>
+                </StackPanel>
+               
+            </GroupBox>
+            <GroupBox>
+                <StackPanel>
+                    <Label Content="Fájlnév: " Margin="5"/>
+                    <TextBox x:Name="tbox_fajlnevKereses" Margin="5,0,0,5"/>
+                    <Button IsEnabled="{Binding ElementName=tbox_fajlnevKereses,Path=Text.Length}" x:Name="btn_keres" Content="Keresés" Margin="5" Padding="5" Click="btn_keres_Click"/>
+                    <TextBlock x:Name="tbl_fajlTalalat" Margin="5,15,5,5"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="4" Foreground="Red" Text="{Binding hibauzenet}" Margin="5"/>
+    </Grid>
+</Window>

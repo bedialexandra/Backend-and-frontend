@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Bédi_Alexandra_Munkavállalók/1.0.0": {
+        "runtime": {
+          "Bédi_Alexandra_Munkavállalók.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bédi_Alexandra_Munkavállalók/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
