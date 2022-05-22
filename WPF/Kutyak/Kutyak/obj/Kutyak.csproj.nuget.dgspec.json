@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\2021-2022_tanev\\Console\\Kutyak\\Kutyak\\Kutyak.csproj": {}
+    "D:\\Backend and frontend\\WPF\\Kutyak\\Kutyak\\Kutyak.csproj": {}
   },
   "projects": {
-    "Z:\\2021-2022_tanev\\Console\\Kutyak\\Kutyak\\Kutyak.csproj": {
+    "D:\\Backend and frontend\\WPF\\Kutyak\\Kutyak\\Kutyak.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\2021-2022_tanev\\Console\\Kutyak\\Kutyak\\Kutyak.csproj",
+        "projectUniqueName": "D:\\Backend and frontend\\WPF\\Kutyak\\Kutyak\\Kutyak.csproj",
         "projectName": "Kutyak",
-        "projectPath": "Z:\\2021-2022_tanev\\Console\\Kutyak\\Kutyak\\Kutyak.csproj",
-        "packagesPath": "C:\\Users\\bedi.alexandra\\.nuget\\packages\\",
-        "outputPath": "Z:\\2021-2022_tanev\\Console\\Kutyak\\Kutyak\\obj\\",
+        "projectPath": "D:\\Backend and frontend\\WPF\\Kutyak\\Kutyak\\Kutyak.csproj",
+        "packagesPath": "C:\\Users\\ALEXANDRA\\.nuget\\packages\\",
+        "outputPath": "D:\\Backend and frontend\\WPF\\Kutyak\\Kutyak\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\bedi.alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ALEXANDRA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -58,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

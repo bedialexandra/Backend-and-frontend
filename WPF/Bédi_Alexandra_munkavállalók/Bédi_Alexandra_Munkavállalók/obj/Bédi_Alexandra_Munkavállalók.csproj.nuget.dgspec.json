@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Bédi_Alexandra\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj": {}
+    "D:\\Backend and frontend\\WPF\\Bédi_Alexandra_munkavállalók\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj": {}
   },
   "projects": {
-    "E:\\Bédi_Alexandra\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj": {
+    "D:\\Backend and frontend\\WPF\\Bédi_Alexandra_munkavállalók\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Bédi_Alexandra\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj",
+        "projectUniqueName": "D:\\Backend and frontend\\WPF\\Bédi_Alexandra_munkavállalók\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj",
         "projectName": "Bédi_Alexandra_Munkavállalók",
-        "projectPath": "E:\\Bédi_Alexandra\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj",
-        "packagesPath": "C:\\Users\\bedi.alexandra\\.nuget\\packages\\",
-        "outputPath": "E:\\Bédi_Alexandra\\Bédi_Alexandra_Munkavállalók\\obj\\",
+        "projectPath": "D:\\Backend and frontend\\WPF\\Bédi_Alexandra_munkavállalók\\Bédi_Alexandra_Munkavállalók\\Bédi_Alexandra_Munkavállalók.csproj",
+        "packagesPath": "C:\\Users\\ALEXANDRA\\.nuget\\packages\\",
+        "outputPath": "D:\\Backend and frontend\\WPF\\Bédi_Alexandra_munkavállalók\\Bédi_Alexandra_Munkavállalók\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\bedi.alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ALEXANDRA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -60,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,94 @@
+ - npm install -g @angular/cli
+ - npm install -g npx
+ - npx ng new my-app
+ - npm cd my-app
+ - npx ng serve --open
+ - npm install primeng --save
+ - npm install primeicons --save
+ - npx ng g class PilotaModel --type=model 
+class:
+	export class PilotaModel {
+    		public ID: number = 0;
+    		public nev: string = "";
+    		public szuletes: number = Date.now();
+    		public nemzet:string = "";
+    		public magassag:number = 0;
+    		public csapat: CsapatModel = new CsapatModel();
+	}
+
+	export class CsapatModel {
+    		public static CsapatLista: CsapatModel[] = [];
+    		public csapatid:number = 0;
+    		public csapatnev: string = "";
+    		public csapatnemzet:string = "";
+
+    		constructor(element: any = null) {
+        			if (element !== null) {
+            				this.csapatid = element.csapatid;  
+            				this.csapatnev = element.csapatnev;
+            				this.csapatnemzet = element.csapatnemzet;
+
+            				CsapatModel.CsapatLista.push(this);
+        			}
+    		}
+	}
+
+ - npx ng g service versenyzok
+service:
+	export class PilotaService {
+
+  		public token:string = "";
+
+  		constructor(private http:HttpClient) {
+
+    			this.http.get("http://localhost:8000/api/token", {"responseType":"text"}).subscribe(
+      (szerverrőladat) => {
+          this.token = szerverrőladat;
+          console.log(this.token);
+      }
+    )
+
+  }
+
+  getPilotak() : Observable<PilotaModel[]> {
+    return this.http
+        .get<any[]>("http://localhost:8000/api/pilotak")
+        .pipe(
+          map((adatok) => {
+            let segédtömb: PilotaModel[] = [];
+            
+            for (let index = 0; index < adatok.length; index++) {
+              const element = adatok[index];
+              
+              let seged:PilotaModel = new PilotaModel();
+              seged.ID = element.ID;
+              seged.nev = element.nev;
+              seged.magassag = element.magassag;
+              seged.nemzet = element.nemzet;
+              seged.szuletes = element.szuletes;
+              if (CsapatModel.CsapatLista.findIndex(x=>x.csapatid == element.csapatid) !== -1) {
+                let index = CsapatModel.CsapatLista.findIndex(x=>x.csapatid == element.csapatid);
+                seged.csapat = CsapatModel.CsapatLista[index];
+              } else {
+                seged.csapat = new CsapatModel(element);
+              }
+              
+              segédtömb.push(seged);
+            }
+            return segédtömb;
+          })
+        );
+  }
+
+  deletePilota( id : number) :Observable<any> {
+    return this.http.delete("http://localhost:8000/api/pilotak/"+id);
+  }
+
+  insertPilota( pilota : PilotaModel) :Observable<any> {
+    return this.http.put("http://localhost:8000/api/pilotak/", pilota);
+  }
+
+  updatePilota( pilota : PilotaModel) :Observable<any> {
+    return this.http.post("http://localhost:8000/api/pilotak/"+pilota.ID, pilota);
+  }
+}

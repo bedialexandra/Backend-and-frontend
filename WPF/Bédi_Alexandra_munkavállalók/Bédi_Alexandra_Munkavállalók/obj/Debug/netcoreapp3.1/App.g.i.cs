@@ -45,7 +45,7 @@ namespace Bédi_Alexandra_Munkavállalók {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.8.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.14.0")]
         public void InitializeComponent() {
             
             #line 5 "..\..\..\App.xaml"
@@ -60,7 +60,7 @@ namespace Bédi_Alexandra_Munkavállalók {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.8.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.14.0")]
         public static void Main() {
             Bédi_Alexandra_Munkavállalók.App app = new Bédi_Alexandra_Munkavállalók.App();
             app.InitializeComponent();

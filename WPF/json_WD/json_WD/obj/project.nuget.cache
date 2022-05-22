@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hk2W4IHJFXgFHvIZqXFxXLDB8ff2BcBDhNINiE/79PHiJ3hF2qnKrCdw4olqavtCyTXUIZ0xfw3OlM/07ApzQw==",
+  "dgSpecHash": "F9F48WJ5Hmox+3OtoWnssFRc1HGTKEexvf9a3zQoDYB9C3LpXah+qOD1OH9gLaOEhKf4CAvPZV3aHYZ9nHH8Gg==",
   "success": true,
-  "projectFilePath": "T:\\bg\\14A_WPF\\json_WD\\json_WD\\json_WD.csproj",
+  "projectFilePath": "D:\\Backend and frontend\\WPF\\json_WD\\json_WD\\json_WD.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bg.JEDLIKHELYI\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\ALEXANDRA\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

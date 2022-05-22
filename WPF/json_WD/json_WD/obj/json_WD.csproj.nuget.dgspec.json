@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "T:\\bg\\14A_WPF\\json_WD\\json_WD\\json_WD.csproj": {}
+    "D:\\Backend and frontend\\WPF\\json_WD\\json_WD\\json_WD.csproj": {}
   },
   "projects": {
-    "T:\\bg\\14A_WPF\\json_WD\\json_WD\\json_WD.csproj": {
+    "D:\\Backend and frontend\\WPF\\json_WD\\json_WD\\json_WD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "T:\\bg\\14A_WPF\\json_WD\\json_WD\\json_WD.csproj",
+        "projectUniqueName": "D:\\Backend and frontend\\WPF\\json_WD\\json_WD\\json_WD.csproj",
         "projectName": "json_WD",
-        "projectPath": "T:\\bg\\14A_WPF\\json_WD\\json_WD\\json_WD.csproj",
-        "packagesPath": "C:\\Users\\bg.JEDLIKHELYI\\.nuget\\packages\\",
-        "outputPath": "T:\\bg\\14A_WPF\\json_WD\\json_WD\\obj\\",
+        "projectPath": "D:\\Backend and frontend\\WPF\\json_WD\\json_WD\\json_WD.csproj",
+        "packagesPath": "C:\\Users\\ALEXANDRA\\.nuget\\packages\\",
+        "outputPath": "D:\\Backend and frontend\\WPF\\json_WD\\json_WD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\bg.JEDLIKHELYI\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ALEXANDRA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
